@@ -1,0 +1,124 @@
+totals = []
+equations = []
+doubleoperators = ["A", "S", "M", "D", "P", "Mod"]
+usesSingleDigit = True
+
+def start():
+    print("This is my calculator. Make sure you type letters in capital with no spaces. Make sure to scroll down when the outputs get too long.")
+    while True:
+        arithoperator()
+        continues = input("Continue?(Y/N)")
+        if continues == "N" or continues == "n":
+            printarr(totals)
+            printarr(equations)
+            break
+
+def arithoperator():
+    firstnum = float(input("Choose a first number"))
+    operator = input("Choose an operator (A)ddition, (S)ubtraction, (M)ultiply, (D)ivide, (P)ower of,(R)oot,(F)actorial and (Mod)ulus")
+    
+    checkfor(doubleoperators, operator)
+    
+    if usesSingleDigit == True:
+        secnum = float(input("Choose a second number"))
+        if operator == "A":
+            addition(firstnum, secnum)
+            combinetwo(firstnum, secnum, "+")
+        if operator == "S":
+            subtraction(firstnum, secnum)
+            combinetwo(firstnum, secnum, "-")
+        if operator == "M":
+            multiplication(firstnum, secnum)
+            combinetwo(firstnum, secnum, "x")
+        if operator == "D":
+            division(firstnum, secnum)
+            combinetwo(firstnum, secnum, "/")
+        if operator == "P":
+            exponent(firstnum, secnum)
+            combinetwo(firstnum, secnum, "^")
+        if operator == "Mod":
+            modulus(firstnum, secnum)
+            combinetwo(firstnum, secnum, "%")
+    else:
+        if operator == "F":
+            factorial(firstnum)
+            combineone(firstnum, "!")
+        if operator == "R":
+            root(firstnum)
+            combineone("√", firstnum)
+
+def checkfor(arr, input_val):
+    global usesSingleDigit
+    if input_val in arr:
+        usesSingleDigit = True
+    else:
+        usesSingleDigit = False
+    return usesSingleDigit
+
+def combinetwo(first, second, operator):
+    combined = str(first) + operator + str(second)
+    equations.append(combined)
+
+def combineone(first, operator):
+    combo = str(first) + str(operator)
+    equations.append(combo)
+
+def printarr(arr):
+    if arr == totals:
+        if len(totals) > 1:
+            print("Totals: ", end="")
+        else:
+            print("Total: ", end="")
+    if arr == equations:
+        print("Equations: ", end="")
+    for i in range(len(arr)):
+        curr = arr[i]
+        if i == len(arr) - 1:
+            print(curr)
+        else:
+            print(str(curr) + ", ", end="")
+
+def addition(first, second):
+    result = first + second
+    totals.append(result)
+    print(result)
+
+def factorial(first):
+    result = 1
+    for i in range(int(first)):
+        result *= i + 1
+    totals.append(result)
+    print(result)
+
+def subtraction(first, second):
+    result = first - second
+    totals.append(result)
+    print(result)
+
+def multiplication(first, second):
+    result = first * second
+    totals.append(result)
+    print(result)
+
+def division(first, second):
+    result = first / second
+    totals.append(result)
+    print(result)
+
+def exponent(first, second):
+    result = first ** second
+    totals.append(result)
+    print(result)
+
+def root(first):
+    result = first ** 0.5
+    totals.append(result)
+    print(result)
+
+def modulus(first, second):
+    result = first % second
+    totals.append(result)
+    print(result)
+
+if __name__ == "__main__":
+    start()
