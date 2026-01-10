@@ -1,1 +1,1 @@
-Hello! This is my engineering portfolio for all my past engineering projects! 
+Hello! This is my engineering portfolio for all my relevant engineering and programming projects! 
