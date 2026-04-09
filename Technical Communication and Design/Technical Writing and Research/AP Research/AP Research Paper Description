@@ -1,0 +1,25 @@
+Abstract:
+
+Given increasingly stringent emissions regulations and increased global warming, 
+there is a global need for optimized engine performance. 
+Researchers and car companies are turning towards turbocharged engines to address this need. 
+This study focuses on the effects of Air-to-Fuel Ratio (AFR) on the performance of a gas 
+turbocharged engine, where performance is measured through engine knock, torque output, 
+and brake-specific fuel consumption. A simplified mean value engine model was created 
+in order to simulate the fundamental internal thermodynamic behaviors of the engine 
+under isentropic and steady-state thermal conditions under a wide range of engine speed 
+conditions. The data was then processed using a min-max normalization in order to determine 
+the most optimal AFR for the following conditions: the highest output torque, the 
+lowest engine knock, the lowest fuel consumption, and the lean best torque. 
+Findings show that the best AFR for maximizing torque output and minimizing engine knock is 
+0.8. The best AFR for fuel efficiency is 1.2. The AFR for the lean best torque output was 
+0.9. Results indicate that leaner conditions are better for engine efficiency and 
+that richer conditions are better for increasing torque and reducing engine knock. 
+Additionally, a slightly rich mixture is best for balancing torque output, 
+fuel consumption, and engine knock. 
+These results align with the general trends observed in the existing literature, 
+and it can be concluded that AFR trends for naturally aspirated gas engines generally 
+align with those seen in gas turbocharged engines. 
+
+Keywords: air-to-fuel ratio, gas turbocharged engine, mean value engine model, 
+brake-specific fuel consumption, torque output, engine knock
